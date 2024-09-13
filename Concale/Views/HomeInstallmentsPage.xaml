@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Concale.Views.HomeInstallmentsPage"
+             Title="คำนวนเงินผ่อนบ้าน" BackgroundColor="#E6E6FA">
+    <VerticalStackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Text="_______________________________________________________________"
+                   TextColor="#2B0098"
+                   Margin="0,-16,0,0"/>
+            <Label Text="ระบุจำนวนเงินกู้" 
+                   FontAttributes="Bold"
+                   Margin="20,20,0,0"/>
+            <Frame HeightRequest="36"
+                   WidthRequest="360"
+                   HasShadow="True"
+                   Grid.Row="1">
+                <Entry x:Name="LoanAmountEntry"
+                       BackgroundColor="White"
+                       Keyboard="Numeric"
+                       HeightRequest="52"
+                       WidthRequest="360"/>
+            </Frame>
+            <Label Text="อัตราเปอร์เซ็นต์(%)ดอกเบี้ยต่อปี" 
+                   FontAttributes="Bold" 
+                   Grid.Row="2" 
+                   Margin="20,20,0,0"/>
+            <Frame HeightRequest="36"
+                   WidthRequest="360"
+                   HasShadow="True"
+                   Grid.Row="3">
+                <Entry x:Name="InterestRateEntry"
+                       BackgroundColor="White"
+                       Keyboard="Numeric"
+                       HeightRequest="52"
+                       WidthRequest="360"/>
+            </Frame>
+            <Label Text="ระยะเวลากู้(เดือน)" 
+                   FontAttributes="Bold"
+                   Grid.Row="4" 
+                   Margin="20,20,0,0"/>
+            <Frame HeightRequest="36"
+                   WidthRequest="360"
+                   HasShadow="True"
+                   Grid.Row="5">
+                <Entry x:Name="LoanTermEntry"
+                       BackgroundColor="White"
+                       Keyboard="Numeric"
+                       HeightRequest="52"
+                       WidthRequest="360"/>
+            </Frame>
+            <Frame BackgroundColor="White"
+                   CornerRadius="10"
+                   HeightRequest="360"
+                   WidthRequest="360"
+                   Margin="0,20,0,20"
+                   Padding="10"
+                   Grid.Row="6"
+                   HasShadow="True">
+                <VerticalStackLayout VerticalOptions="Center">
+                    <Label Text="เงินผ่อนต่อเดือน"
+                           FontSize="18"
+                           HorizontalOptions="Center"
+                           FontAttributes="Bold"
+                           TextColor="Black"
+                           Margin="0,0,0,130"/>
+                    <Label x:Name="MonthlyPaymentLabel"
+                           Text="0.00"
+                           TextColor="#2B0098"
+                           FontSize="24"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"/>
+                    <Label Text="*จำนวนเงินส่วนนี้เป็นการประเมินเบื้องต้นเท่านั้น"
+                           FontSize="12"
+                           HorizontalOptions="Center"
+                           TextColor="Red"
+                           Margin="0,130,0,0"/>
+                </VerticalStackLayout>
+            </Frame>
+            <Frame WidthRequest="360"
+                   Padding="0" 
+                   HasShadow="True" 
+                   CornerRadius="8"
+                   Grid.Row="7">
+                <Button Text="คำนวน" 
+                        Clicked="btnHomeCalculate_Clicked"
+                        FontAttributes="Bold" 
+                        FontSize="18" 
+                        BackgroundColor="#2B0098"/>
+            </Frame>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

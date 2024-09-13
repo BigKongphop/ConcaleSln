@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Concale.Views.OutcomeEntryPage"
+             Title="รายจ่าย" BackgroundColor="#E6E6FA">
+    <VerticalStackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Text="__________________________________________________________________"
+                   TextColor="#2B0098"
+                   Margin="-16"/>
+            <Label Text="ชื่อรายจ่าย" 
+                   FontAttributes="Bold"
+                   Margin="20,25,0,0"/>
+            <Frame HeightRequest="36"
+                   WidthRequest="360"
+                   HasShadow="True"
+                   Grid.Row="1">
+                <Editor Text="{Binding OutcomeName}"
+                        BackgroundColor="White"
+                        HeightRequest="52"
+                        WidthRequest="360"/>
+            </Frame>
+            <Label Text="ระบุจำนวนเงิน" 
+                   FontAttributes="Bold"
+                   Margin="20,25,0,0"
+                   Grid.Row="2"/>
+            <Frame HeightRequest="36"
+                   WidthRequest="360"
+                   HasShadow="True"
+                   Grid.Row="3">
+                <Entry Text="{Binding OutcomeMoney}"
+                       BackgroundColor="White"
+                       Keyboard="Numeric"
+                       HeightRequest="52"
+                       WidthRequest="360"/>
+            </Frame>
+            <Label Text="รายละเอียด" 
+                   FontAttributes="Bold"
+                   Margin="20,25,0,0"
+                   Grid.Row="4"/>
+            <Frame HeightRequest="200"
+                   WidthRequest="360"
+                   HasShadow="True"
+                   Grid.Row="5">
+                <Editor Text="{Binding OutcomeDetail}"
+                        BackgroundColor="White"
+                        HeightRequest="218"
+                        WidthRequest="360"/>
+            </Frame>
+            <Frame Grid.Row="6"
+                   Margin="20,25,20,0"
+                   Padding="0" 
+                   HasShadow="True" 
+                   CornerRadius="8">
+                <Button x:Name="btnSaveOutcome"
+                        Text="บันทึกรายการ"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        BackgroundColor="#2B0098"
+                        Clicked="btnSaveOutcome_Clicked"/>
+            </Frame>
+            <Frame Grid.Row="7"
+                   Margin="20,25,20,0"
+                   Padding="0" 
+                   HasShadow="True" 
+                   CornerRadius="8">
+                <Button x:Name="btnDeleteOutcome" 
+                        Text="ลบรายการ" 
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        BackgroundColor="#2B0098"
+                        Clicked="btnDeleteOutcome_Clicked"/>
+            </Frame>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>
